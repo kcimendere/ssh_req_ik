@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:filterbar="sap.ui.comp.filterbar">
+	<Dialog >
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Title text="{i18n>dealer}" />
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+			<Table noDataText=" " items="{ path: 'userModel>/GetUserYdBayiSet'}" growing="true" width="100%">
+				<headerToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="{i18n>dealer}"/>
+					</Column>
+					<Column width="12em">
+						<Text text="{i18n>dealerName}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem  type="Active"
+						press="handleDealerListItemPress">
+						<cells>
+							<Text text="{userModel>Bayi}"/>
+							<Text text="{userModel>BayiName}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<endButton>
+			<Button text="{i18n>buttonTextCancel}" press="handleDealerCancel"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

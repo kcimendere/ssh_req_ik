@@ -1,0 +1,218 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout"
+	xmlns:unified="sap.ui.unified">
+	<Page id="wizardBranchingReviewPage" showHeader="false">
+		<content>
+			<Panel>
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>custInf}"/>
+						<ToolbarSpacer/>
+						<Button text="{i18n>buttonTextEdit}" press="_navBackToCustomer"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:Form width="100%">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="6" labelSpanL="6" labelSpanM="6" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+								emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="true"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="{i18n>dealerName}">
+										<f:fields>
+											<Text id="dealerRew"/>
+										</f:fields>
+									</f:FormElement>
+										<f:FormElement label="{i18n>country}">
+											<f:fields>
+												<Input enabled="false" id="dealerCountryRew"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>owner}">
+											<f:fields>
+												<Text text="{create>/ToCustomerh/Zz1UrunSahibiSrhTxt}" />
+												<!--<Select id="owner" forceSelection="false" selectedKey="{create>/ToCustomerh/Zz1UrunSahibiSrh}" change="handleOwnerChange"-->
+												<!--	items="{ path: 'valueHelp>/ValueHelpSet', filters: [{ path: 'Code', operator: 'EQ', value1: '0020' }]}">-->
+												<!--	<core:Item key="{valueHelp>Key}" text="{valueHelp>Value}"/>-->
+												<!--</Select>-->
+											</f:fields>
+										</f:FormElement>
+									<f:FormElement label="{i18n>custName}">
+										<f:fields>
+											<Text text="{create>/ToCustomerh/Zz1MusteriAdsoyadSrh}"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="{i18n>custAddr}">
+										<f:fields>
+											<TextArea value="{create>/ToCustomerh/Zz1MusteriAdresSrh}" rows="2" enabled="false"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement  label="{i18n>dealerAddress}">
+										<f:fields>
+											<TextArea id="dealerAddressRew" rows="2" enabled="false"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+			<Panel>
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>generalInf}"/>
+						<ToolbarSpacer/>
+						<Button text="{i18n>buttonTextEdit}" press="_navBackToGeneral"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:Form width="100%">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="6" labelSpanL="6" labelSpanM="6" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+								emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="true"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="{i18n>product}">
+										<f:fields>
+											<Text text="{create>/ToRefObj/TextObject}"/>
+											<Text text="{create>/ToRefObj/ProductId}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>quan}">
+										<f:fields>
+											<Text text="{create>/ToCustomerh/Zz1MiktarSrh}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>prodStat}">
+										<f:fields>
+											<Text text="{create>/ToCustomerh/Zz1KullanimDurumSrhTxt}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>billNo}">
+										<f:fields>
+											<Text text="{create>/ToCustomerh/Zz1FaturaNoSrh}"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>billDate}">
+										<f:fields>
+											<DatePicker enabled="false" dateValue="{path:'create>/ToCustomerh/Zz1FaturaTarihSrh', formatter:'.faturaTarihFormatter'}"/>
+										</f:fields>
+									</f:FormElement>
+										<f:FormElement label="{i18n>errProdName}">
+											<f:fields>
+												<Text text="{create>/ToCustomerh/Zz1HataliParcaAdiSrh}"/>
+											</f:fields>
+										</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer>
+								<f:formElements>
+										<f:FormElement label="{i18n>custReq}">
+											<f:fields>
+												<Text text="{create>/ToCustomerh/Zz1BayiTalepSrhTxt}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>custInvDate}">
+											<f:fields>
+												<DatePicker id="custInvDateRew" enabled="false"/>
+											</f:fields>
+										</f:FormElement>
+									<f:FormElement  label="{i18n>errorNote}">
+										<f:fields>
+											<TextArea enabled="false" id="errorNoteRew" rows="2"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+			<Panel>
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>titleNotes}"/>
+						<ToolbarSpacer/>
+						<!--<Button text="{i18n>buttonTextEdit}" press="_navBackToNotes"/>-->
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<List items="{create>/ToTexts/results}" delete="onRemoveNote" class="sapUiSmallMarginBottom">
+						<items>
+							<FeedListItem showIcon="true" icon="sap-icon://notes" sender="{detail>Tdtext}" text="{create>ConcLines}" info="{path: 'create>Tdtext'}"/>
+						</items>
+					</List>
+				</content>
+			</Panel>
+			<!--<Panel>-->
+			<!--	<headerToolbar>-->
+			<!--		<Toolbar height="3rem">-->
+			<!--			<Title text="{i18n>errorHeader}"/>-->
+			<!--			<ToolbarSpacer/>-->
+			<!--			<Button text="{i18n>buttonTextEdit}" press="_navBackToError"/>-->
+			<!--		</Toolbar>-->
+			<!--	</headerToolbar>-->
+			<!--	<content>-->
+			<!--		<f:Form width="100%">-->
+			<!--			<f:layout>-->
+			<!--				<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"-->
+			<!--					emptySpanM="4" emptySpanS="4" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true"/>-->
+			<!--			</f:layout>-->
+			<!--			<f:formContainers>-->
+			<!--				<f:FormContainer>-->
+			<!--					<f:formElements>-->
+			<!--						<f:FormElement label="{i18n>sourceOfError}">-->
+			<!--							<f:fields>-->
+			<!--								<Text text="{create>/ToCustomerh/Zz1HKaynagiSdSrhTxt}"/>-->
+			<!--							</f:fields>-->
+			<!--						</f:FormElement>-->
+			<!--						<f:FormElement label="{i18n>category1}">-->
+			<!--							<f:fields>-->
+			<!--								<Text text="{create>/ToCategory/results/0/Value}"/>-->
+			<!--							</f:fields>-->
+			<!--						</f:FormElement>-->
+			<!--						<f:FormElement label="{i18n>category2}">-->
+			<!--							<f:fields>-->
+			<!--								<Text text="{create>/ToCategory/results/1/Value}"/>-->
+			<!--							</f:fields>-->
+			<!--						</f:FormElement>-->
+			<!--						<f:FormElement label="{i18n>category3}">-->
+			<!--							<f:fields>-->
+			<!--								<Text text="{create>/ToCategory/results/2/Value}"/>-->
+			<!--							</f:fields>-->
+			<!--						</f:FormElement>-->
+			<!--						<f:FormElement label="{i18n>category4}">-->
+			<!--							<f:fields>-->
+			<!--								<Text text="{create>/ToCategory/results/3/Value}"/>-->
+			<!--							</f:fields>-->
+			<!--						</f:FormElement>-->
+			<!--						<f:FormElement label="{i18n>category5}">-->
+			<!--							<f:fields>-->
+			<!--								<Text text="{create>/ToCategory/results/4/Value}"/>-->
+			<!--							</f:fields>-->
+			<!--						</f:FormElement>-->
+			<!--					</f:formElements>-->
+			<!--				</f:FormContainer>-->
+			<!--			</f:formContainers>-->
+			<!--		</f:Form>-->
+			<!--	</content>-->
+			<!--</Panel>-->
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="{i18n>buttonTextSave}" type="Accept" press="onSaveObject"></Button>
+					<Button text="{i18n>buttonTextCancel}" press="handleWizardCancel"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:FragmentDefinition>
